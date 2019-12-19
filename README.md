@@ -6,10 +6,10 @@ These are some patterns I use from day to day when writing PureScript FFI code, 
 
 Code examples are there, but documentation are incomplete yet.
 
-1. [Use arrow function to curry](src/Practice/ArrowFunction/README.md)
-2. [No type class constraint in foreign import](src/Practice/NoTypeClass/README.md)
-3. [Use Json to interoperate record](src/Practice/Json/README.md)
-4. [Use Promise for async code](src/Practice/Promise/README.md)
+1. [Use arrow function to curry](src/Practice/ArrowFunction)
+2. [No type class constraint in foreign import](src/Practice/NoTypeClass)
+3. [Use Json to interoperate record](src/Practice/Json)
+4. [Use Promise for async code](src/Practice/Promise)
 
 ## Run a practice
 
