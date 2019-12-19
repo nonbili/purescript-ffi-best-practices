@@ -58,4 +58,4 @@ main = do
 
 ## Summary
 
-Each type class constraint add an extra argument to the foreign function. To avoid accidental runtime error, do not use type class constraint in foreign imported functions. The only case to violate this is when using type class function in JavaScript code.
+Each type class constraint adds an extra argument to the foreign function. To avoid accidental runtime error, do not use type class constraint in foreign imported functions. The only case to violate this is when using type class function in JavaScript code.
