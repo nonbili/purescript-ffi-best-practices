@@ -9,7 +9,6 @@ module Practice.NoTypeClass.Main where
 import Prelude
 import Effect (Effect)
 import Effect.Console (logShow)
-
 ```
 
 Let's look at two equal functions, one with the `Eq` constraint, the other without.
@@ -18,7 +17,6 @@ Let's look at two equal functions, one with the `Eq` constraint, the other witho
 foreign import equal :: forall a. a -> a -> Boolean
 
 foreign import equalClass :: forall a. Eq a => a -> a -> Boolean
-
 ```
 
 If I open `Main.js`, I will find the implementation of `equalClass` has one more argument than `equal`. If I print this argument, I will see `Eq { eq: [Function] }`. That's the `Eq` type class represented as an object in JavaScript. Actullay, each type class constraint will add one extra argument to the foreign function. If I add or remove type classes constraint carelessly, it will break the program in runtime.
@@ -28,14 +26,12 @@ However, with `equal`, `purs` won't be able to help us checking there is an `Eq 
 ```
 eqEqual :: forall a. Eq a => a -> a -> Boolean
 eqEqual = equal
-
 ```
 
 A case to violate this rule is to use the type class functions from the JavaScript side. For example, if I use `===` to check the equality of two PureScript records, it would fail.
 
 ```purescript
 foreign import equalRecord :: forall a. Eq a => a -> a -> Boolean
-
 ```
 
 ```purescript

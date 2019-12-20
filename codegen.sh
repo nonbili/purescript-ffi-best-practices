@@ -6,5 +6,5 @@ for p in ${practices[@]}; do
     # From https://unix.stackexchange.com/a/61146
     sed -n '/^```/,/^```/ p' \
         < src/Practice/$p/README.md \
-        | sed '/^```/ d' > src/Practice/$p/Main.purs
+        | sed 's/^```.*//' > src/Practice/$p/Main.purs
 done

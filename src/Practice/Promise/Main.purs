@@ -1,3 +1,4 @@
+
 -- Run with `spago run -m Practice.Promise.Main`
 module Practice.Promise.Main where
 
@@ -10,6 +11,7 @@ import Effect.Aff (Aff)
 import Effect.Aff as Aff
 import Effect.Class.Console (log)
 
+
 foreign import fetchPromise_ :: Int -> Effect (Promise.Promise String)
 
 fetchPromise :: Int -> Aff String
@@ -19,6 +21,7 @@ foreign import fetchAsync_ :: Int -> Effect (Promise.Promise String)
 
 fetchAsync :: Int -> Aff String
 fetchAsync = Promise.toAffE <<< fetchAsync_
+
 
 main :: Effect Unit
 main = do
@@ -35,3 +38,4 @@ main = do
 
     Aff.attempt (fetchAsync (-1)) >>= traverse_ \res ->
       log res -- no output
+

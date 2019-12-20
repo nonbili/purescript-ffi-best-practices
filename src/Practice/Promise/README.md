@@ -16,7 +16,6 @@ import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Aff as Aff
 import Effect.Class.Console (log)
-
 ```
 
 Handle JavaScript promise or async/await the same way in PureScript.
@@ -31,7 +30,6 @@ foreign import fetchAsync_ :: Int -> Effect (Promise.Promise String)
 
 fetchAsync :: Int -> Aff String
 fetchAsync = Promise.toAffE <<< fetchAsync_
-
 ```
 
 Use `Aff.attempt` to handle promise rejection.

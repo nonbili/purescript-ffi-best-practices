@@ -20,7 +20,6 @@ import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Effect.Class.Console (log, logShow)
 import Foreign (Foreign, unsafeToForeign)
-
 ```
 
 ## Pass a value from JavaScript to PureScript
@@ -29,7 +28,6 @@ For primitive JavaScript types like `number`, `string` and `boolean`, they map t
 
 ```purescript
 foreign import simpleObject :: { x :: Int, y :: String, z :: Boolean }
-
 ```
 
 But if a field is nullable, it doesn't work.
@@ -37,7 +35,6 @@ But if a field is nullable, it doesn't work.
 ```purescript
 -- Throws `new Error("Failed pattern match at Data.Maybe (...): ");` in runtime.
 foreign import nullableObject :: { x :: Maybe Int }
-
 ```
 
 Use Json to fix it.
@@ -47,7 +44,6 @@ foreign import nullableObject_ :: Json
 
 eitherNullableObject :: Either String { x :: Maybe Int }
 eitherNullableObject = decodeJson nullableObject_
-
 ```
 
 ## Pass a value from PureScript to JavaScript
@@ -64,7 +60,6 @@ foreign import encodeNullable_ :: Json -> String
 
 encodeNullable :: forall a. EncodeJson a => a -> String
 encodeNullable = encodeNullable_ <<< encodeJson
-
 ```
 
 Another benefit of using `Json` is there are built-in `EncodeJson` and `DecodeJson` instances for data structures like `Map` and `Set`. For example, if I want to do some computation on a huge Map, it's possibly faster to do it in JavaScript.
@@ -76,7 +71,6 @@ foreign import getKeys_ :: Json -> Array String
 
 getKeys :: MyMap -> Array String
 getKeys = getKeys_ <<< encodeJson
-
 ```
 
 ```purescript
