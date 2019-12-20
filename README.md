@@ -4,8 +4,6 @@ These are some patterns I use from day to day when writing PureScript FFI code, 
 
 ## Best practices
 
-Code examples are there, but documentation are incomplete yet.
-
 1. [Use arrow functions to curry manually](src/Practice/ArrowFunction)
 2. [No type class constraint in foreign import](src/Practice/NoTypeClass)
 3. [Use Json to interoperate](src/Practice/Json)
@@ -32,7 +30,7 @@ spago run -m Practice.ArrowFunction.Main
 spago run -m Practice.Promise.Main
 ```
 
-## A Literal PureScript Setup
+## A Literate PureScript Setup
 
 All `src/**/Main.purs` are extracted from `src/**/README.md` by sed.
 

@@ -37,6 +37,7 @@ foreign import getKeys_ :: Json -> Array String
 
 getKeys :: MyMap -> Array String
 getKeys = getKeys_ <<< encodeJson
+
 type XY = { x :: Int, y :: Maybe Int }
 
 myMap :: MyMap

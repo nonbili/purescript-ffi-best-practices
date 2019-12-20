@@ -76,6 +76,7 @@ foreign import getKeys_ :: Json -> Array String
 
 getKeys :: MyMap -> Array String
 getKeys = getKeys_ <<< encodeJson
+
 ```
 
 ```purescript
