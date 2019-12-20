@@ -1,6 +1,6 @@
-# Use Json to interoperate PureScript record with JavaScript code
+# Use Json to interoperate
 
-**Best practice**: Convert Promise to Aff when dealing with async foreign code.
+**Best practice**: Use Json to pass a value back and forth between PureScript and JavaScript.
 
 ```purescript
 -- Run with `spago run -m Practice.Json.Main`

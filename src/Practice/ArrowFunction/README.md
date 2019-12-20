@@ -27,7 +27,7 @@ equalEffect' = runEffectFn2 equalEffect_
 
 ```
 
-Later, I found out what `runFn*` and [`runEffectFn*`](https://github.com/purescript/purescript-effect/blob/master/src/Effect/Uncurried.js) do is helping me currying. And later, I found that [language-javascript](https://github.com/erikd/language-javascript) supported arrow function. So now I don't need `runFn*` and `runEffectFn*` anymore. FFI code becomes much easier to read and write. Compare the above 6 lines with the following 2 lines.
+Later, I found out what [`runFn*`](https://github.com/purescript/purescript-functions/blob/master/src/Data/Function/Uncurried.js) and [`runEffectFn*`](https://github.com/purescript/purescript-effect/blob/master/src/Effect/Uncurried.js) do is helping me currying. And later, I found that [language-javascript](https://github.com/erikd/language-javascript) supported arrow function. So now I don't need `runFn*` and `runEffectFn*` anymore. FFI code becomes much easier to read and write. Compare the above 6 lines with the following 2 lines.
 
 ```purescript
 foreign import equal :: Int -> Int -> Boolean
