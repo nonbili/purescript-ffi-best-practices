@@ -35,3 +35,10 @@ spago run -m Practice.Promise.Main
 All `src/**/Main.purs` are extracted from `src/**/README.md` by sed.
 
 Run `find src/**/README.md | entr -s ./codegen.sh` to regenerate Main.purs on README changes.
+
+## Some libraries following the best practices
+
+- [purescript-nonbili-postgres](https://github.com/nonbili/purescript-nonbili-postgres)
+- [purescript-msgpack-msgpack](https://github.com/nonbili/purescript-msgpack-msgpack)
+
+Support my open source works by hiring me, or using [Hunch](https://hunch.cloud). Hunch is a website builder written in Haskell and PureScript.
